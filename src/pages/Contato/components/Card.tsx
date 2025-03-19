@@ -13,7 +13,7 @@ const Card = ({img, alt="", titulo="", textButton="", href=""}: cardProps ) => {
     <article className="font-lata flex items-center justify-center flex-col w-[362px] h-[310px] bg-tertiary space-y-6">
       <img src={img} alt={alt} />
       <h2 className="font-bold text-2xl text-primary">{titulo}</h2>
-      <span className="text-primary border-b w-[308px] mt-2.5"></span>
+      <span className="text-[#533e2948] border-b border-[1px] w-[308px] mt-2.5"></span>
       <a
       href={href}
       target="_blank"
