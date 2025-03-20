@@ -1,6 +1,10 @@
 
-import { Link } from 'react-router-dom'
 import underline from '../../assets/header-underline.svg'
+import { Button } from '../../components/Button/button'
+import img from '../../assets/Image.png'
+import img1 from '../../assets/Image1.png'
+import img2 from '../../assets/Image2.png'
+import img3 from '../../assets/Image3.png'
 
 const Home = () => {
   return (
@@ -11,14 +15,25 @@ const Home = () => {
              Registrando suas melhores memórias
           </h1>
           <div className='absolute bottom-5 left-[170px]'>
-              <img src={underline} alt=""/>
+              <img src={underline} alt="Underline"/>
           </div>
-          <Link to='/portfolio'>
-            <button 
-              className='w-[140px] h-[42px] bg-fundo py-3 px-6 rounded-[48px] flex items-center justify-center text-primary text-md font-lato font-bold cursor-pointer hover:bg-secondary hover:text-tertiary transform transition duration-300'>
-              Ver portfólio
-            </button>
-          </Link>
+          <Button />
+        </div>
+      </div>
+      <div className='max-w-[1440px] h-[550px] m-auto mt-10 flex flex-row justify-between gap-4'>
+        <div>
+          <img src={img} alt="" />
+        </div>
+        <div>
+          <img src={img3} alt="" />
+        </div>
+        <div className='flex flex-col gap-4'>
+        <div>
+          <img src={img1} alt="" />
+        </div>
+        <div>
+          <img src={img2} alt="" />
+        </div>
         </div>
       </div>
     </section>
