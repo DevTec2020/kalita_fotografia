@@ -40,6 +40,24 @@ const portfolioItems = [
 
 const Portfolio = () => {
   return (
+  <>
+    <title>Portfólio | Ensaio Fotográfico Profissional</title>
+    <meta
+      name="description"
+      content="Confira os ensaios fotográficos realizados por Kalita Fotografia. Especializada em newborn, gestantes, partos e fotos temáticas como o Natal."
+    />
+    <meta
+      name="keywords"
+      content="fotografia, portfólio, ensaio fotográfico, newborn, gestantes, partos, fotos natalinas"
+    />
+    <meta name="author" content="Kalita Fotografia" />
+    <meta property="og:title" content="Portfólio | Ensaio Fotográfico Profissional" />
+    <meta
+      property="og:description"
+      content="Veja os ensaios fotográficos realizados por Kalita Fotografia."
+    />
+    <meta property="og:image" content="URL_DA_IMAGEM_DESTAQUE" />
+    <meta property="og:url" content="URL_DA_PAGINA" />
     <main className="font-homeKalita bg-quaternary flex justify-center flex-col items-center">
       <section className="relative flex flex-col justify-start items-center h-[170px]">
         <h1 className="z-10 text-6xl font-light text-primary mt-10">Portfolio</h1>
@@ -62,21 +80,21 @@ const Portfolio = () => {
                   className="absolute top-0 mt-[43px] ml-[30px]"
                   src={item.image}
                   alt={item.alt}
-                />
+                  />
               </figure>
               <Link
                 className="absolute flex justify-center items-center text-center w-[134px] h-[34px] text-2xl text-primary font-light bg-fundo bottom-[-76px] right-[-55px] pt-1 z-10"
                 to={item.path}
-              >
+                >
                 Ver fotos
               </Link>
             </article>
           ))}
         </div>
-        
         <div className="absolute w-full h-[526px] top-0 bg-fundo" />
       </section>
     </main>
+  </>
   );
 };
 
