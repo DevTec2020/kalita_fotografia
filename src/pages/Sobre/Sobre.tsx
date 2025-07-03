@@ -12,7 +12,7 @@ const Sobre = () => {
 
 
         <div className='md:hidden'>
-          <h1 className='text-primary text-[64px] font-bold font-lata leading-[110%] text-center mb-4 md:hidden'>Sobre mim</h1>
+          <h1 className='text-primary text-[64px] font-bold font-lata leading-[110%] text-center mb-2 md:hidden'>Sobre mim</h1>
           <div className='w-full'>
             <img
               src={HomeImg}
@@ -20,9 +20,9 @@ const Sobre = () => {
               className='w-full h-auto'
             />
 
-            <div className='p-5'>
+            <div className='p-4'>
               <p
-                className='text-base text-left text-[#242424] font-lata leading-relaxed'
+                className='text-base text-left text-[#242424] font-lata leading-[150%]'
               >
                 Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque. Ut diam quam, semper iaculis condimentum ac, vestibulum eu nisl.
               </p>
