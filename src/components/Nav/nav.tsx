@@ -26,16 +26,17 @@ export function Nav(){
             </Link>
           </ul>
 
-          <button onClick={toggleMenu} className="sm:hidden flex">
-            <img src={line} alt="icone para menu" />
+          <button onClick={toggleMenu} className="sm:hidden block">
+            {isOpen ? <p className="font-homeKalita text-2xl">X</p> : <img src={line} alt="icone para menu" />}
           </button>
           {/* Overlay */}
             {isOpen && (
                 <div
-                    className="fixed top-30 inset-0 bg-black/40 z-40"
+                    className="fixed top-28 inset-0 bg-black/40 z-40"
                     onClick={toggleMenu}
                 >
-                   <ul className="gap-3 uppercase flex flex-col items-end ">
+                  <nav className="absolute right-0 bg-quaternary h-svh w-1/2">
+                   <ul className="uppercase flex flex-col items-center justify-center gap-8 pt-8">
                       <Link to="/portfolio">
                         <li className="text-md text-primary font-bold hover:cursor-pointer hover:text-secondary transform transition duration-300">Portfólio</li>
                       </Link>
@@ -49,6 +50,7 @@ export function Nav(){
                         <li className="text-md text-primary font-bold hover:cursor-pointer hover:text-secondary transform transition duration-300">Contato</li>
                       </Link>
                   </ul>
+                  </nav>
                 </div>
             )}
         </nav>
