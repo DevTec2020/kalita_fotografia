@@ -7,7 +7,7 @@ const Header = () => {
    <header className="w-full h-28 bg-quaternary border-b border-primary/10">
       <div className="flex justify-center items-center px-6 max-w-[1440px] mx-auto relative">
         <Link to='/'>
-            <img src={logo} alt="logo" />
+            <img src={logo} alt="logo" className="sm:w-full w-32"/>
         </Link>
         <Nav />
       </div>
