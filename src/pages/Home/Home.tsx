@@ -31,7 +31,7 @@ const Home = () => {
     <section className="w-full h-svh bg-quaternary">
 
       {/* Mobile */}
-      <div className='sm:hidden flex flex-col items-center justify-center gap-4 mt-28'>
+      <div className='sm:hidden flex flex-col items-center justify-center gap-4'>
         <div className="w-full h-[120px] px-4 mt-16 flex flex-col gap-6 space-y-5 justify-center items-center relative">
           <h1 className="text-5xl font-homeKalita text-primary text-center">
              Registrando suas melhores memórias
@@ -55,7 +55,7 @@ const Home = () => {
      
 
       {/* Desktop */}
-      <div className="max-w-[1440px] p-4 hidden sm:flex justify-center items-center m-auto mt-28">
+      <div className="max-w-[1440px] p-4 hidden sm:flex justify-center items-center m-auto">
         <div className="w-[413px] h-[120px] mt-20 flex flex-col gap-6 space-y-5 justify-center items-center relative">
           <h1 className="text-5xl font-homeKalita text-primary text-center">
              Registrando suas melhores memórias
