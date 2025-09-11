@@ -59,7 +59,7 @@ export function Nav() {
           {menuItems.map(({ href, label }) => (
             <li
               key={href}
-              className="text-md text-primary font-bold hover:cursor-pointer hover:text-secondary transform transition duration-300"
+              className="text-md text-primary font-bold cursor-pointer hover:text-secondary transform transition duration-300"
             >
               <Link to={href} onClick={() => setIsOpen(false)}>
                 {label}
@@ -74,7 +74,7 @@ export function Nav() {
         {menuItems.map(({ href, label }) => (
           <li
             key={href}
-            className="text-md text-primary font-bold hover:cursor-pointer hover:text-secondary transform transition duration-300"
+            className="text-md text-primary font-bold cursor-pointer hover:text-secondary transform transition duration-300"
           >
             <Link to={href}>{label}</Link>
           </li>
