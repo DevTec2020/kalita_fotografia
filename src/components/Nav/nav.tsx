@@ -22,7 +22,7 @@ export function Nav() {
      
       <button
         onClick={toggleMenu}
-        className="sm:hidden z-50 relative w-8 h-8 flex items-center justify-center"
+        className="2sm:hidden z-50 relative w-8 h-8 flex items-center justify-center"
       >
         {/* Ícone hamburguer */}
         <img
@@ -70,7 +70,7 @@ export function Nav() {
       </section>
 
       {/* Menu desktop */}
-      <ul className="gap-5 uppercase hidden sm:flex">
+      <ul className="gap-5 uppercase hidden 2sm:flex">
         {menuItems.map(({ href, label }) => (
           <li
             key={href}
