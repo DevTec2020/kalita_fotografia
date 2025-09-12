@@ -48,14 +48,14 @@ const Contato = () => {
       />
       <meta name="author" content="Kalita Fotografia" />
 
-      <main className="font-lato relative w-full xl:h-[calc(100vh-12rem)] h-full flex justify-center items-center flex-col m-auto xl:mt-20 lg:mt-20 md:mt-20 mt-10 mb-20">
+      <main className="font-lato relative w-full xl:h-[calc(100vh-12rem)] h-full flex justify-center items-center flex-col m-auto xl:mt-20 lg:mt-20 md:mt-20 mt-10 mb-20 max-md:max-w-80">
         <div className="xl:flex hidden absolute w-full top-5 left-0 h-[63%] bg-[#D9D9D9]"></div>
         <div className="xl:w-7xl w-full flex flex-col justify-center xl:items-center lg:items-center md:items-center items-start gap-6">
           <h2 className="xl:hidden lg:hidden md:hidden flex justify-center xl:w-[556px] w-full text-6xl font-bold xl:text-[#545454] lg:text-[#545454] md:text-[#545454] text-(--color-primary) leading-16">
             Contato
           </h2>
           <h1
-            className="z-10 xl:w-[556px] lg:w-[556px] md:w-[556px] w-[328px] xl:text-6xl lg:text-6xl md:text-6xl text-[40px] font-bold xl:text-[#545454] lg:text-[#545454] md:text-[#545454] text-(--color-primary) xl:leading-16 lg:leading-16 md:leading-17 leading-10 
+            className="z-10 xl:w-[556px] lg:w-[556px] md:w-[556px]  xl:text-6xl lg:text-6xl md:text-6xl text-[40px] font-bold xl:text-[#545454] lg:text-[#545454] md:text-[#545454] text-(--color-primary) xl:leading-16 lg:leading-16 md:leading-17 leading-10 
           xl:ml-0 lg:ml-0 md:ml-0 ml-[14px]"
           >
             Quer agendar uma sessão?
