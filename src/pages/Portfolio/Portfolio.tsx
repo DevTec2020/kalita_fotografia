@@ -91,11 +91,10 @@ const Portfolio = () => {
         <section className="relative md:hidden flex justify-center items-center mt-5 md:mt-0">
           <Swiper
             modules={[Pagination, Navigation, EffectFade]}
-            // effect="fade"
             fadeEffect={{ crossFade: true }}
             slidesPerView={1}
             initialSlide={0}
-            // spaceBetween={20}
+            spaceBetween={20}
             pagination={{ clickable: true }}
             className="w-[264px] h-[550px]"
             onSwiper={(swiper) => setSwiperInstance(swiper)}
