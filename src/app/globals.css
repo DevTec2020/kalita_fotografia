@@ -16,3 +16,19 @@
   --font-antonio: "Antonio", sans-serif;
   --font-nunito: "Nunito Sans", sans-serif;
 }
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.4s ease-out forwards;
+}
