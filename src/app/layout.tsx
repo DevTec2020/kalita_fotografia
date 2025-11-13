@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/app/shared/ui/Header";
-import { Providers } from "./providers";
 import { Footer } from "./shared/ui/Footer";
+import { Providers } from "./Providers";
 
 export const metadata: Metadata = {
   title: "Kalita - Developement Website",

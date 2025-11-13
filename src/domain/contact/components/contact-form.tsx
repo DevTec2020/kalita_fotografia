@@ -1,7 +1,5 @@
 "use client";
 
-import { useContactMutation } from "@/app/shared/hooks/use-contact-mutation";
-import { useFormValidation } from "@/app/shared/hooks/useFormValidation";
 import {
   ContactSchema,
   type ContactSchemaType,
@@ -13,10 +11,12 @@ import Input from "@/app/shared/ui/form/input";
 import { Modal } from "@/app/shared/ui/Modal";
 import { useState } from "react";
 import type { ContactMessage } from "../entities/contact-message";
+import { useContactForm } from "../hooks/useContactForm";
+import { useContactMutation } from "../hooks/useContactMutation";
 
 export default function ContactForm() {
   const [, setIsModalOpen] = useState<boolean>(false);
-  const { handleSubmit, errors, control } = useFormValidation(ContactSchema);
+  const { handleSubmit, errors, control } = useContactForm(ContactSchema);
   const { mutate, isPending, isSuccess, isError } = useContactMutation();
 
   const onsubmit = (formData: ContactSchemaType) => {
