@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Controller } from "react-hook-form";
-import { CustomTextAreaProps } from "../types/CustomTextArea";
+import { CustomTextAreaProps } from "./types/CustomTextArea";
 import ErrorMessage from "./ErrorMessage";
 import clsx from "clsx";
 

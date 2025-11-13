@@ -1,6 +1,6 @@
 "use client";
 import { Controller } from "react-hook-form";
-import { IInputProps } from "../types/Input";
+import { IInputProps } from "./types/Input";
 import clsx from "clsx";
 import ErrorMessage from "./ErrorMessage";
 

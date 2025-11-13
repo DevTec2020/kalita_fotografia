@@ -1,9 +1,9 @@
 import React from "react";
 import { Controller } from "react-hook-form";
 import { IMaskInput } from "react-imask";
-import { ICustomPhone } from "../types/CustomPhone";
 import ErrorMessage from "./ErrorMessage";
 import clsx from "clsx";
+import type { ICustomPhone } from "./types/CustomPhone";
 
 export default function CustomPhone({
   label,

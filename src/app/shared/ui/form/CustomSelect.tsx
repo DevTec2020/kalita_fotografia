@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Controller } from "react-hook-form";
 import { GoChevronDown } from "react-icons/go";
-import { CustomSelectProps } from "../types/CustomSelect";
+import { CustomSelectProps } from "./types/CustomSelect";
 import clsx from "clsx";
 import ErrorMessage from "./ErrorMessage";
 

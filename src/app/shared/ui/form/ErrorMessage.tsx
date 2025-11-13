@@ -1,5 +1,5 @@
 import { VscError } from "react-icons/vsc";
-import { IErrorMessage } from "../types/ErrorMessage";
+import { IErrorMessage } from "./types/ErrorMessage";
 
 
 export default function ErrorMessage({ message }: IErrorMessage) {

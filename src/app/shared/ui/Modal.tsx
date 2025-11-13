@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { ModalProps } from "../types/Modal";
+import type { ModalProps } from "./form/types/Modal";
 
 export function Modal({ isOpen, onClose, title, message }: ModalProps) {
   return (

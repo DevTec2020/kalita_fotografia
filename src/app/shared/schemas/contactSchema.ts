@@ -1,6 +1,6 @@
 import z from "zod";
 
-export const formContactSchema = z.object({
+export const ContactSchema = z.object({
   full_name: z
     .string()
     .nonempty("Por favor, informe seu nome completo.")
@@ -30,4 +30,4 @@ export const formContactSchema = z.object({
     .max(500, { message: "A mensagem pode ter no máximo 500 caracteres." }),
 });
 
-export type formContactType = z.infer<typeof formContactSchema>;
+export type ContactSchemaType = z.infer<typeof ContactSchema>;
