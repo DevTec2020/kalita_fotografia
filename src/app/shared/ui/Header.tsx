@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Button } from './button'
+import { ButtonCTA } from './ButtonCTA'
 import { MenuButton } from './menuButton'
 
 
@@ -39,8 +39,9 @@ export function Header() {
 
       <div className='flex items-center gap-6'>
         <Link href={'/contato'}>
-          <Button>Fale comigo</Button>
+          <ButtonCTA size='small' content='Fale comigo' />
         </Link>
+        
 
         <Link href={'/login'} className='hidden md:block'>
           <button

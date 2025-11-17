@@ -4,6 +4,14 @@
 @import "tailwindcss";
 @tailwind utilities;
 
+/* *{
+  border: 1px solid red;
+} */
+
+* {
+  @apply transition-all duration-500
+}
+
 @theme {
   --color-kalita-bg-light: #fcfafa;
   --color-kalita-bg-medium: #f7f7f7;
@@ -15,7 +23,26 @@
 
   --font-antonio: "Antonio", sans-serif;
   --font-nunito: "Nunito Sans", sans-serif;
+
+
+    /* Mobile First */
+  --breakpoint-mobile-small: 360px;   /* Smartphones pequenos */
+  --breakpoint-mobile-medium: 480px;  /* Smartphones médios */
+  --breakpoint-mobile-large: 640px;   /* Smartphones grandes */
+  
+  /* Tablets */
+  --breakpoint-tablet-small: 768px;   /* Tablets pequenos */
+  --breakpoint-tablet-large: 1024px;  /* Tablets grandes */
+  
+  /* Desktops */
+  --breakpoint-desktop-small: 1280px; /* Laptops/Desktops pequenos */
+  --breakpoint-desktop-medium: 1440px; /* Desktops padrão */
+  --breakpoint-desktop-large: 1920px;  /* Desktops grandes */
 }
+
+
+
+
 
 @keyframes slideDown {
   0% {
@@ -31,4 +58,32 @@
 
 .animate-slideDown {
   animation: slideDown 0.4s ease-out forwards;
+}
+.center-title-small {
+  @apply md:whitespace-pre-wrap;
+  font-size: clamp(28px, 3vw + 1rem, 48px);
+}
+
+.center-description-small {
+  @apply text-[18px]
+}
+
+.button-medium {
+  @apply w-[80%]
+}
+
+.grid-proporcional {
+  width: clamp(300px, 39vw, 564px); 
+   max-width: 564px;
+  height: clamp(195px, 25.5vw, 368px); 
+    aspect-ratio: 564 / 368; 
+}
+
+.headings-container > h2, .headings-container > p{
+  @apply text-center lg:text-left
+
+}
+
+.kalita-dark {
+  color: var(--color-kalita-brown-dark);
 }

@@ -3,7 +3,7 @@
 import {
   ContactSchema,
   type ContactSchemaType,
-} from "@/app/shared/schemas/contactSchema";
+} from "@/domain/contact/schemas/contactSchema";
 import CustomPhone from "@/app/shared/ui/form/CustomPhone";
 import CustomSelect from "@/app/shared/ui/form/CustomSelect";
 import CustomTextArea from "@/app/shared/ui/form/CustomTextArea";
