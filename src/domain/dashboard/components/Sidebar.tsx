@@ -42,7 +42,7 @@ export function Sidebar({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col md:flex-row min-h-screen w-full">
       <aside
-        className='flex flex-col justify-between bg-white md:w-[25%] min-w-[260px] py-10 h-[100px] md:h-screen'
+        className='flex flex-col justify-between bg-white md:w-[25%] min-w-[260px] py-10 h-[100px] md:h-screen items-center'
       >
         <div className="px-8">
           <header className="flex justify-between items-center gap-1">
