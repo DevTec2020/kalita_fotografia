@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { GrGallery } from "react-icons/gr";
 import { LuMessageSquareText } from "react-icons/lu";
+import { MdLogout } from "react-icons/md";
 import { PiHouseLight, PiPackage } from "react-icons/pi";
 import { RiGalleryView2 } from "react-icons/ri";
 
@@ -66,6 +67,11 @@ export function MenuDashboardButton() {
                   {item.label}
                 </Link>
               ))}
+
+              <button className="flex items-center gap-2 text-[15px] cursor-pointer text-base text-kalita-brown-dark font-bold">
+                <MdLogout />
+                Sair
+              </button>
             </nav>
           </div>
         )}
