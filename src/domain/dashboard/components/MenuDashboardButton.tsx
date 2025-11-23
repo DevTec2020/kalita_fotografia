@@ -39,7 +39,7 @@ export function MenuDashboardButton() {
       <div className="absolute top-0 left-0 w-full z-[9999]">
         {open && (
           <div
-            className="w-full h-screen bg-white
+            className="w-full h-screen bg-white flex flex-col 
         transform transition-all duration-500 ease-out animate-slideRight 
         ">
 
@@ -49,7 +49,7 @@ export function MenuDashboardButton() {
                   <X
                     width={24}
                     height={24}
-                    className='text-kalita-brown-dark'
+                    className='text-kalita-brown-dark cursor-pointer'
                     onClick={handleMenuButtonClick}
                   />
                 </button>
@@ -82,12 +82,14 @@ export function MenuDashboardButton() {
                   {item.label}
                 </Link>
               ))}
+            </nav>
 
+            <footer className="absolute bottom-0 left-0 pb-[116px] pt-[42px] px-6 border-t border-gray-300 w-full">
               <button className="flex items-center gap-2 text-[15px] cursor-pointer text-base text-kalita-brown-dark font-bold">
                 <MdLogout />
                 Sair
               </button>
-            </nav>
+            </footer>
           </div>
         )}
       </div>
