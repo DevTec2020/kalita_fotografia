@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../../globals.css";
 import { Sidebar } from "@/domain/dashboard/components/Sidebar";
+import { Providers } from "@/app/(main)/Providers";
 
 export const metadata: Metadata = {
   title: "Kalita - Developement Website",
@@ -13,12 +14,15 @@ export default function DashboardLayout({
 }) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body className="flex">
+      <Providers>
+              <body className="flex">
         <Sidebar />
           <div className="w-full bg-kalita-portfolio">
             {children}
           </div>
       </body>
+      </Providers>
+
     </html>
   );
 }

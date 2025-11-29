@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, ReactNode } from "react";
 import { v4 as uuid } from "uuid";
-import { GalleryContextData, GalleryImage } from "../types/gallery-types";
+import type { GalleryContextData, GalleryImage } from "../entities/portfolio-entities";
 
 const GalleryContext = createContext<GalleryContextData | null>(null);
 
@@ -15,7 +15,7 @@ export function GalleryProvider({ children }: { children: ReactNode }) {
   function addImage(file: File) {
     const newImg: GalleryImage = {
       id: uuid(),
-      file,
+      files: file,
       preview: URL.createObjectURL(file),
       selected: false,
     };
@@ -58,6 +58,7 @@ export function GalleryProvider({ children }: { children: ReactNode }) {
         removeImages,
       }}
     >
+
       {children}
     </GalleryContext.Provider>
   );

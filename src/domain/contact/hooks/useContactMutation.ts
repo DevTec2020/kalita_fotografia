@@ -1,11 +1,11 @@
-import { useApiContactService } from "@/domain/instanceContainer"
+import { useApiContactService } from "@/domain/container"
 import { useMutation } from "@tanstack/react-query"
 import type {  ContactMessage } from "../entities/contact-message"
 import type { AxiosError } from "axios"
 
 export const useContactMutation = () =>{
   const contactMutation = useApiContactService
-  const {mutate, isPending, isSuccess, isError } =  useMutation({
+  const {mutate, isPending, isSuccess, isError, reset } =  useMutation({
       mutationFn : (data : ContactMessage) => contactMutation.sendMessage(data),
       onSuccess : () =>{
         console.info("Meus dados Foram enviados")
@@ -18,6 +18,6 @@ export const useContactMutation = () =>{
   })
 
   return {
-    mutate, isPending, isSuccess, isError 
+    mutate, isPending, isSuccess, isError, reset
   }
 }

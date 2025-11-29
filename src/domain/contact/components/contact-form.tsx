@@ -15,20 +15,50 @@ import { useContactForm } from "../hooks/useContactForm";
 import { useContactMutation } from "../hooks/useContactMutation";
 
 export default function ContactForm() {
-  const [, setIsModalOpen] = useState<boolean>(false);
-  const { handleSubmit, errors, control } = useContactForm(ContactSchema);
-  const { mutate, isPending, isSuccess, isError } = useContactMutation();
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const {
+    handleSubmit,
+    errors,
+    control,
+    reset: resetForm,
+    clearErrors
+  } = useContactForm(ContactSchema);
+
+  const { mutate, isPending, isSuccess, isError, reset } = useContactMutation();
 
   const onsubmit = (formData: ContactSchemaType) => {
     console.log(formData);
 
     const dataUpdate = {
       ...formData,
-      phone : formData.phone.replace(/\D/g, ""),
+      phone: formData.phone.replace(/\D/g, ""),
       assigned_photographer: null,
       status: "pending",
     } as unknown as ContactMessage;
-    mutate(dataUpdate);
+    mutate(dataUpdate, {
+      onSuccess: () => {
+        setIsModalOpen(true),
+        
+          resetForm({
+            full_name: "",
+            email: "",
+            phone: "",
+            photo_session_type: "",
+            message: "",
+          });
+          
+      },
+    });
+  };
+
+  const handleCloseModal = () => {
+    
+    if(isSuccess){
+       setIsModalOpen(false);
+    reset();
+    }
+    return
+   
   };
 
   return (
@@ -78,17 +108,13 @@ export default function ContactForm() {
           type="submit"
         >
           <span className="font-nunito font-normal text-kalita-bg-light text-lg">
-            
-
-            {
-              isPending ? "Carregando..." : "Enviar"
-            }
+            {isPending ? "Carregando..." : "Enviar"}
           </span>
         </button>
 
         <Modal
-          isOpen={isSuccess}
-          onClose={() => setIsModalOpen(false)}
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
           title="Formulário enviado com sucesso!"
           message="Sua mensagem foi enviada. Entraremos em contato em breve."
         />

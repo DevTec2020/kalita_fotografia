@@ -8,6 +8,7 @@ export const useContactForm = (schema: typeof ContactSchema) => {
     handleSubmit, 
     control,
     reset,
+    clearErrors,
     formState: { errors } 
   } = useForm<ContactSchemaType>({
     resolver: zodResolver(schema),
@@ -18,6 +19,7 @@ export const useContactForm = (schema: typeof ContactSchema) => {
     handleSubmit, 
     control,
     reset,
-    errors
+    errors,
+    clearErrors
   };
 };

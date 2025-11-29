@@ -1,7 +1,9 @@
+"use client"
 import AddButtonPortfolio from "./components/ButtonAdd";
 import DeleteButtonPortfolio from "./components/ButtonDelete";
 import SelectAllButtonPortfolio from "./components/ButtonSelectAll";
 import GalleryGrid from "./components/GalleryGrid";
+import { SaveUpload } from "./components/SaveUpload";
 
 export function PortfolioManagementUI() {
   return (
@@ -9,7 +11,7 @@ export function PortfolioManagementUI() {
       <div className="flex flex-col gap-10 items-center w-full">
           
           {/* HEADER */}
-          <div
+          <header
             className="
               flex flex-col sm:flex-row 
               w-full items-start sm:items-center 
@@ -25,7 +27,10 @@ export function PortfolioManagementUI() {
                 Gerencie suas fotos de portfólio.
               </span>
             </div>
-          </div>
+
+            <SaveUpload />
+ 
+          </header>
 
           <div
             className="

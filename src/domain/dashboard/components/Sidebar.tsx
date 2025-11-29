@@ -1,7 +1,6 @@
 
 import Image from "next/image";
 import { MdLogout } from "react-icons/md";
-import { MenuDashboardButton } from "./MenuDashboardButton";
 import { Navbar } from "./NavBar";
 
 export function  Sidebar() {

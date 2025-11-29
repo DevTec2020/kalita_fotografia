@@ -7,9 +7,6 @@ export class ApiInstance {
   public static setupInstance(baseURL: string): AxiosInstance {
     return axios.create({
       baseURL,
-      headers: {
-        "Content-Type": "application/json",
-      },
       timeout: 10000,
     });
   }
