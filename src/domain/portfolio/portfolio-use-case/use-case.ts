@@ -1,6 +1,6 @@
 import type { AxiosInstance } from "axios";
 import type { IPortfolioRepository } from "../interfaces/portfolio-interface";
-import type { PortfolioUploadResponse, RequestPortfolio, SuccessPortfolioResponse } from "../entities/portfolio-entities";
+import type { RequestPortfolio, SuccessPortfolioResponse } from "../entities/portfolio-entities";
 
 export class PortfolioService implements IPortfolioRepository {
   private httpPortfolioIntance: AxiosInstance;

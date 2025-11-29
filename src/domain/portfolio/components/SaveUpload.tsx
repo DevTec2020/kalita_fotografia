@@ -4,7 +4,7 @@ import { useGallery } from "../hooks/useGalleryProvider";
 import { useUploadMultiples } from "../hooks/useUploadMultiples";
 
 export const SaveUpload = () => {
-  const { mutate, isPending, isError } = useUploadMultiples();
+  const { mutate, isPending } = useUploadMultiples();
 
   const { images } = useGallery();
   if (!images || images.length === 0) return null;
@@ -14,6 +14,7 @@ export const SaveUpload = () => {
     
   images.forEach((item, index) => {
     newFormData.append('files', item.files);
+    console.log(index)
   });
 
   newFormData.append('category', 'uploads');
