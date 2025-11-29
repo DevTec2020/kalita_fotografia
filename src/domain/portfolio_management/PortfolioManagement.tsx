@@ -15,16 +15,8 @@ export default function PortfolioManagement() {
 
 function PortfolioManagementUI() {
   return (
-    <section className="flex justify-end w-full">
-      <div
-        className="
-          w-full lg:w-9/12 
-          px-4 sm:px-8 md:px-16 lg:px-28 xl:px-36 
-          py-10 lg:py-15 
-          bg-kalita-portfolio
-        "
-      >
-        <div className="flex flex-col gap-10 items-center w-full">
+    <section className="flex justify-end w-[832px] mx-auto pt-15">
+      <div className="flex flex-col gap-10 items-center w-full">
           
           {/* HEADER */}
           <div
@@ -72,7 +64,6 @@ function PortfolioManagementUI() {
             </div>
           </div>
         </div>
-      </div>
 
     </section>
   );

@@ -13,10 +13,11 @@ export default function DashboardLayout({
 }) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body>
-        <Sidebar>
-          {children}
-        </Sidebar>
+      <body className="flex">
+        <Sidebar />
+          <div className="w-full bg-kalita-portfolio">
+            {children}
+          </div>
       </body>
     </html>
   );
