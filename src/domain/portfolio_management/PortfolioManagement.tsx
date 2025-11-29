@@ -2,18 +2,8 @@ import AddButtonPortfolio from "./components/ButtonAdd";
 import DeleteButtonPortfolio from "./components/ButtonDelete";
 import SelectAllButtonPortfolio from "./components/ButtonSelectAll";
 import GalleryGrid from "./components/GalleryGrid";
-import { GalleryProvider } from "./hooks/useGalleryProvider";
 
-
-export default function PortfolioManagement() {
-  return (
-    <GalleryProvider>
-      <PortfolioManagementUI />
-    </GalleryProvider>
-  );
-}
-
-function PortfolioManagementUI() {
+export function PortfolioManagementUI() {
   return (
     <section className="flex justify-end w-[832px] mx-auto pt-15">
       <div className="flex flex-col gap-10 items-center w-full">
