@@ -23,7 +23,7 @@ export function MenuDashboardButton() {
         <BsLayoutSidebar
           width={24}
           height={24}
-          className='text-kalita-brown-dark cursor-pointer'
+          className='text-kalita-brown-dark cursor-pointer h-6 w-6'
           onClick={handleMenuButtonClick}
         />
       </button>
