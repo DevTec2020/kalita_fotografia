@@ -3,14 +3,14 @@
 import { X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { memo, useState } from "react";
 
 import { BsLayoutSidebar } from "react-icons/bs";
 import { MdLogout } from "react-icons/md";
 import { sidebarLinks } from "./sidebar.contents";
 
 
-export function MenuDashboardButton() {
+export const MenuDashboardButton = memo(function MenuDashboardButton() {
   const [open, setOpen] = useState<boolean>(false);
 
   function handleMenuButtonClick() {
@@ -89,4 +89,4 @@ export function MenuDashboardButton() {
       </div>
     </>
   )
-}
+})
