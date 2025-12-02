@@ -2,6 +2,8 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
+import { CgDanger } from "react-icons/cg";
+import { IoClose } from "react-icons/io5";
 import { useGallery } from "../hooks/useGalleryProvider";
 
 interface DeleteModalProps {
@@ -25,64 +27,75 @@ export default function DeleteModal({ open, onClose, ids }: DeleteModalProps) {
 
   useEffect(() => {
     if (!open) return;
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = prev || "";
-    };
+
+    if (typeof window !== "undefined") {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+
+      return () => {
+        document.body.style.overflow = prev || "";
+      };
+    }
   }, [open]);
 
   function handleConfirm() {
-    if (!ids || ids.length === 0) {
-      onClose();
-      return;
-    }
-    removeImages(ids);
+    if (ids.length > 0) removeImages(ids);
     onClose();
   }
 
-  if (!open) return null;
-
   return (
     <AnimatePresence>
-      <motion.div
-        className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        onClick={onClose} 
-      >
+      {open && (
         <motion.div
-          initial={{ scale: 0.95, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.95, opacity: 0 }}
-          className="bg-white rounded-xl shadow-xl p-6 w-[90%] max-w-sm"
-          onClick={(e) => e.stopPropagation()} 
+          className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
         >
-          <h2 className="text-lg font-semibold text-gray-800">Excluir fotos</h2>
-
-          <p className="text-sm text-gray-600 mt-2">
-            Tem certeza que deseja excluir <strong>{ids.length}</strong> foto
-            {ids.length > 1 ? "s" : ""}? Essa ação não pode ser desfeita.
-          </p>
-
-          <div className="mt-6 flex justify-end gap-3">
+          <motion.div
+            className="
+              bg-white rounded-2xl shadow-2xl relative
+              w-[95%] max-w-2xl px-10 py-10
+              flex flex-col items-center text-center
+            "
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            transition={{ type: 'spring', damping: 18 }}
+          >
             <button
               onClick={onClose}
-              className="px-4 py-2 rounded-md text-gray-700 bg-gray-100 hover:bg-gray-200 transition"
+              className="cursor-pointer absolute top-6 right-6 text-kalita-brown-dark hover:text-black transition"
             >
-              Cancelar
+              <IoClose size={24} />
             </button>
+          
+            <div className="w-20 h-20 rounded-full bg-red-600 flex items-center justify-center">
+              <CgDanger size={48} className="text-white" style={{ transform: "rotate(180deg)" }} />
+            </div>
+
+            <h2 className="text-xl font-semibold mt-6 text-kalita-brown-dark">
+              Deseja excluir todas as fotos?
+            </h2>
+
+            <p className="text-kalita-bg-light-brown font-normal text-[1rem] mt-3 text-base leading-relaxed max-w-lg">
+              Com esta ação todas as fotos serão excluídas de seu portfólio.
+              <br />
+              Mas não se preocupe, poderá adicionar novas!
+            </p>
 
             <button
               onClick={handleConfirm}
-              className="px-4 py-2 rounded-md bg-red-600 text-white hover:bg-red-700 transition"
+              className="
+                mt-8 px-10 py-2 rounded-md bg-kalita-brown-dark text-white 
+                hover:bg-neutral-900 transition font-medium cursor-pointer
+              "
             >
-              Excluir
+              OK
             </button>
-          </div>
+          </motion.div>
         </motion.div>
-      </motion.div>
+      )}
     </AnimatePresence>
   );
 }
