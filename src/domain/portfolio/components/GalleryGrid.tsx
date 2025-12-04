@@ -1,27 +1,31 @@
 "use client";
 
 import { useGallery } from "../hooks/useGalleryProvider";
-import DropzonePortfolio from "./Dropzone";
 import Image from "next/image";
 import { GoCheck } from "react-icons/go";
+import DropzonePortfolio from "./Dropzone";
 
 export default function GalleryGrid() {
   const { images, toggleSelect } = useGallery();
 
+  if (images.length === 0) {
+    return (
+      <div className="w-full h-full flex items-center justify-center">
+        <DropzonePortfolio />
+      </div>
+    );
+  }
+
   return (
     <div
       className="
-        grid 
-        grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 
-        gap-4
+        grid
+        grid-cols-2 sm:grid-cols-3 md:grid-cols-3
+        lg:grid-cols-3 xl:grid-cols-3
+        gap-4 w-full mt-10
       "
     >
-
-      <div className="relative w-full aspect-square rounded-md overflow-hidden">
-        <DropzonePortfolio />
-      </div>
-
-      {images.map((img) => {
+      {images.map(img => {
         const isSelected = img.selected;
 
         return (
@@ -29,39 +33,39 @@ export default function GalleryGrid() {
             key={img.id}
             onClick={() => toggleSelect(img.id)}
             className={`
-              relative w-full aspect-square 
+              relative w-full aspect-square
               overflow-hidden rounded-md cursor-pointer 
               transition-all duration-150
 
-              ${
-                isSelected
-                  ? "ring-2 ring-blue-500/80 shadow-lg shadow-blue-500/20"
-                  : "ring-1 ring-transparent"
-              }
+              ${isSelected
+                ? "ring-2 ring-kalita-brown-dark shadow-[0_6px_18px_rgba(0,0,0,0.08)]"
+                : "border border-kalita-bg-light-brown"}
             `}
           >
-
             <button
-              onClick={(e) => {
+              onClick={e => {
                 e.stopPropagation();
                 toggleSelect(img.id);
               }}
-              className="
-                absolute top-2 left-2 z-20 
-                w-5 h-5 rounded 
+              aria-label={isSelected ? "Desmarcar imagem" : "Selecionar imagem"}
+              className={`
+                absolute top-2 left-2 z-20
+                w-6 h-6 rounded-sm
                 flex items-center justify-center
-                bg-white/90 border border-gray-300
+                ${isSelected
+                  ? "bg-white border border-kalita-brown-dark"
+                  : "bg-white/95 border border-kalita-brown-light"}
                 shadow-sm
-              "
+              `}
             >
-              {isSelected && <GoCheck size={14} className="text-blue-600" />}
+              {isSelected && <GoCheck size={14} className="text-kalita-brown-dark" />}
             </button>
 
             <Image
               src={img.preview}
               alt="preview"
               fill
-              sizes="25vw"
+              sizes="33vw"
               className="object-cover"
             />
           </div>

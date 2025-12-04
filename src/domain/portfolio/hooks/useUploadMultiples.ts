@@ -1,9 +1,10 @@
 import { usePortfolioService } from "@/domain/container"
 import { useMutation } from "@tanstack/react-query"
-import type { PortfolioUploadResponse, RequestPortfolio } from "../entities/portfolio-entities"
+import type { RequestPortfolio } from "../entities/portfolio-entities"
+
+export const portfolioMutation = usePortfolioService
 
 export const useUploadMultiples  = () =>{
-  const portfolioMutation = usePortfolioService
   const {isPending, isError, mutate, isSuccess} = useMutation({
       mutationFn : (data : RequestPortfolio) => 
         portfolioMutation.uploadMultiples(data)
@@ -11,3 +12,4 @@ export const useUploadMultiples  = () =>{
 
   return {isPending, isError, mutate, isSuccess}
 }
+
