@@ -4,4 +4,6 @@ export interface CustomTextAreaProps extends IRHFProps {
   name: string;
   control: any;
   errors?: any;
+  nameTextarea?: string;
+  namePlaceholderTextarea?: string;
 }
