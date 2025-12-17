@@ -17,7 +17,7 @@ export function feedbackPage(){
         <section className="flex flex-col justify-center items-center">
             <Title content={'Compartilhe sua experiência'} size="medium" align="center"/>
 
-            <section className="my-6 max-w-[55vh]">
+            <section className="my-6 max-w-xs md:max-w-sm lg:max-w-lg">
                 <SubTitle content={'Seu feedback é muito importante! Conte mais sobre sua experiência.'} size="small" align="center"/>
             </section>
 
