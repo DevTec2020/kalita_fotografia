@@ -21,7 +21,7 @@ export function feedbackPage(){
                 <SubTitle content={'Seu feedback é muito importante! Conte mais sobre sua experiência.'} size="small" align="center"/>
             </section>
 
-            <form className="border border-kalita-bg-light-brown bg-kalita-bg-medium px-12 py-8 rounded-md space-y-10 w-[50vh]">
+            <form className="border border-kalita-bg-light-brown bg-kalita-bg-medium px-12 py-8 rounded-md space-y-10 w-[50vh] shadow-lg shadow-kalita-bg-light-brown">
                 <Input
                     name="nameUser"
                     nameInput="Seu nome"
