@@ -14,14 +14,14 @@ export function feedbackPage(){
   } = useForm();
 
     return(
-        <section className="flex flex-col justify-center items-center">
+        <section className="flex flex-col justify-center items-center px-4 md:px-0">
             <Title content={'Compartilhe sua experiência'} size="medium" align="center"/>
 
             <section className="my-6 max-w-xs md:max-w-sm lg:max-w-lg">
                 <SubTitle content={'Seu feedback é muito importante! Conte mais sobre sua experiência.'} size="small" align="center"/>
             </section>
 
-            <form className="border border-kalita-bg-light-brown bg-kalita-bg-medium px-12 py-8 rounded-md space-y-10 w-[50vh] shadow-lg shadow-kalita-bg-light-brown">
+            <form className="w-full max-w-md px-12 py-8 rounded-md space-y-10 bg-kalita-bg-medium  border border-kalita-bg-light-brown shadow-lg shadow-kalita-bg-light-brown">
                 <Input
                     name="nameUser"
                     nameInput="Seu nome"
@@ -51,7 +51,21 @@ export function feedbackPage(){
 
 
                 <div className="flex items-center bg-kalita-brown-dark border-2 border-kalita-bg-light-brown py-5 px-4 gap-3 rounded-md">
-                    <input className="appearance-none shrink-0 w-6 h-6 bg-kalita-bg-light border-2 border-kalita-bg-light-brown rounded-md checked:bg-kalita-bg-light-brown cursor-pointer" type="checkbox"/>
+                    <input className="
+                        appearance-none shrink-0 w-6 h-6 
+                        bg-kalita-bg-light border-2 
+                        border-kalita-bg-light-brown 
+                        rounded-md 
+                        cursor-pointer
+                        checked:after:content-['✓']
+                        checked:after:flex
+                        checked:after:items-center
+                        checked:after:justify-center
+                        checked:after:text-sm
+                        checked:after:font-extrabold
+                        " 
+                        type="checkbox"
+                    />
                     <span className="text-xs text-kalita-bg-light ">
                         Autorizo a publicação deste feedback no site Kálita Fotografias. 
                         Entendo que meu nome e depoimento poderão ser exibidos publicamente.
