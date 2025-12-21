@@ -1,17 +1,23 @@
 "use client";
-
-import { useForm } from "react-hook-form";
+import { useState } from "react";
+import { ContactSchema } from "@/domain/contact/schemas/contactSchema";
 import { Title } from "@/app/shared/ui/headings/Title";
 import { SubTitle } from "@/app/shared/ui/headings/Subtitle";
 import { ButtonCTA } from "@/app/shared/ui/ButtonCTA";
 import Input from "@/app/shared/ui/form/input";
 import CustomTextArea from "@/app/shared/ui/form/CustomTextArea";
+import { useContactForm } from "@/domain/contact/hooks/useContactForm";
 
-export function feedbackPage(){
-    const {
-    control,
-    formState: { errors },
-  } = useForm();
+export function FeedbackPage(){
+    const [submitting, setSubmitting] = useState<boolean>(false);
+    const { control, errors, reset:resetForm} = useContactForm(ContactSchema);
+
+    const sendFeedback = (e) => {
+        e.preventDefault();
+        setSubmitting(true)
+
+        alert('Aqui vai o envio para o backend')
+    }
 
     return(
         <section className="flex flex-col justify-center items-center px-4 md:px-0">
@@ -21,32 +27,37 @@ export function feedbackPage(){
                 <SubTitle content={'Seu feedback é muito importante! Conte mais sobre sua experiência.'} size="small" align="center"/>
             </section>
 
-            <form className="w-full max-w-md px-12 py-8 rounded-md space-y-10 bg-kalita-bg-medium  border border-kalita-bg-light-brown shadow-lg shadow-kalita-bg-light-brown">
+            <form 
+                className="w-full max-w-md px-12 py-8 rounded-md space-y-10 bg-kalita-bg-medium  border border-kalita-bg-light-brown shadow-lg shadow-kalita-bg-light-brown"
+                onSubmit={sendFeedback}    
+            >
                 <Input
-                    name="nameUser"
-                    nameInput="Seu nome"
-                    nameLabelInput="nameUser"
-                    namePlaceholderInput="Digite seu nome"
-                    typeInput="text"
+                    name="full_name"
                     control={control}
                     errors={errors}
+                    nameInput="Seu nome"
+                    nameLabelInput="full_name"
+                    namePlaceholderInput="Digite seu nome"
+                    typeInput="text"
+                    
                 />
 
                 <Input
                     name="typeSession"
+                    control={control}
+                    errors={errors}
                     nameInput="Qual foi o tipo de sessão?"
                     nameLabelInput="typeSession"
                     namePlaceholderInput="Parto, acompanhamento do bebê, gestante..."
                     typeInput="text"
-                    control={control}
-                    errors={errors}
                 />
 
                 <CustomTextArea 
                     name="depoimento" 
+                    control={control} 
+                    errors={errors}
                     nameTextarea="Seu depoimento:" 
                     namePlaceholderTextarea="Descreva aqui a sua experiência..."
-                    control={control} errors={errors} 
                 />
 
 
@@ -72,10 +83,10 @@ export function feedbackPage(){
                     </span>
                 </div>
 
-                <ButtonCTA content="Enviar" size="larger" className="w-full" />
+                <ButtonCTA content={submitting ? "Enviando..." : "Enviar" } size="larger" className="w-full"/>
             </form>
         </section>
     )
 }
 
-export default feedbackPage;
+export default FeedbackPage;
